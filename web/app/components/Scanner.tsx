@@ -215,6 +215,23 @@ function ResultsPanel({ report, onReset }: { report: ScanReport; onReset: () => 
                 <span className="text-xs text-[#888888]">{report.failures} failures</span>
               </div>
             </div>
+
+            {/* Detected project profile */}
+            {report.profile && (
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {report.profile.types.filter(t => t !== "unknown").map((t) => (
+                  <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-[#1a1a2e] text-[#818cf8] border border-[#2a2a4e]">{t}</span>
+                ))}
+                {report.profile.frameworks.map((f) => (
+                  <span key={f} className="text-[10px] px-2 py-0.5 rounded-full bg-[#0a1a1a] text-[#38BDAE] border border-[#1a3a3a]">{f}</span>
+                ))}
+                {report.profile.languages.map((l) => (
+                  <span key={l} className="text-[10px] px-2 py-0.5 rounded-full bg-[#1a1a1a] text-[#888888] border border-[#2a2a2a]">{l}</span>
+                ))}
+                {report.profile.hasDatabase && <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1a150a] text-[#eab308] border border-[#3a2a0a]">database</span>}
+                {report.profile.hasDocker && <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#0a1520] text-[#3b82f6] border border-[#1a2540]">docker</span>}
+              </div>
+            )}
           </div>
         </div>
 
