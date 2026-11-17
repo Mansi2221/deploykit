@@ -1,3 +1,5 @@
+import Scanner from "@/app/components/Scanner"
+
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-[#0a0a0a] text-[#e5e5e5]">
@@ -36,7 +38,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="flex flex-col items-center justify-center text-center px-6 pt-24 pb-20 relative overflow-hidden">
+      <section className="flex flex-col items-center justify-center text-center px-6 pt-20 pb-16 relative overflow-hidden">
         {/* Subtle radial glow */}
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"
@@ -46,7 +48,7 @@ export default function Home() {
           }}
         />
 
-        <div className="relative z-10 flex flex-col items-center gap-6 max-w-3xl mx-auto">
+        <div className="relative z-10 flex flex-col items-center gap-5 max-w-3xl mx-auto w-full">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#222222] bg-[#111111] text-xs text-[#888888]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block" />
@@ -68,8 +70,13 @@ export default function Home() {
           </p>
 
           <p className="text-base text-[#888888] max-w-md">
-            One command. Six categories. A clear verdict.
+            Paste a public GitHub repo URL and get an instant production-readiness report.
           </p>
+
+          {/* Live Scanner — the main interactive element */}
+          <div className="w-full mt-2">
+            <Scanner />
+          </div>
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-3 mt-2">
@@ -93,7 +100,7 @@ export default function Home() {
 
           {/* Terminal install block */}
           <div
-            className="mt-8 w-full max-w-xl rounded-xl border border-[#1a1a1a] bg-[#0d0d0d] overflow-hidden terminal-scroll"
+            className="mt-4 w-full max-w-xl rounded-xl border border-[#1a1a1a] bg-[#0d0d0d] overflow-hidden terminal-scroll"
             style={{
               boxShadow:
                 "0 0 0 1px #1a1a1a, 0 20px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.03)",
@@ -682,5 +689,5 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  );
+  )
 }
