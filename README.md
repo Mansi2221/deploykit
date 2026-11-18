@@ -6,6 +6,12 @@
 
 Production readiness scanner for AI applications. One command to find security holes, missing infrastructure, and costly LLM misconfigurations before they hit production.
 
+**Live demo:** [deploykit.vercel.app](https://deploykit.vercel.app) — paste any public GitHub repo URL and get an instant production readiness report.
+
+<p align="center">
+  <img src="docs/screenshot.png" alt="deploykit scanning run-llama/llama_index — score 81/100 with smart project detection" width="700" />
+</p>
+
 ## Why this exists
 
 Shipping an AI application to production involves more than getting the model calls right. Teams routinely forget to:
