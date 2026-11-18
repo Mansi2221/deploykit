@@ -1,0 +1,15 @@
+services:
+  cli:
+    build: .
+    volumes:
+      - ./:/scan:ro
+    entrypoint: ["deploykit", "scan", "/scan"]
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
